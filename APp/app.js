@@ -59,8 +59,3 @@
 //     ];
 
 // })
-var app = angular.module('postalApp', []);
-
-app.contoller('postalController', function($scope){
-    
-})

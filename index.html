@@ -8,19 +8,28 @@
     <script src="./APp/lib/angular.min 2.js"></script>
 </head>
 <body ng-init="">
-    <div class="postalDiv" ng-controller="postalController">
+    <div class="postalDiv" ng-controller="postalCon">
         <header>
             <div class="headerText">
                 <h1>Search a city</h1>
             </div>
             <div class="searchBtn">
-                <input type="text" name="" id="" placeholder="Search">
+                <input type="text" name="" id="" placeholder="Search" ng-model="search">
             </div>
         </header>
-        <div class="main">
-            
+        <div class="main" >
+            <table>
+                <tr><th>ISO code</th><th>State</th><th>Postcode</th><th>LGA</th><th>Facility</th></tr>
+                <tr ng-repeat="postal in postals | filter: search">
+                    <td>{{postal.isoCode}}</td>
+                    <td>{{postal.state}}</td>
+                    <td>{{postal.postcode}}</td>
+                    <td>{{postal.LocalGov}}</td>
+                    <td>{{postal.facility}}</td>
+                </tr>
+            </table>
         </div>
     </div>
-    <script src="./APp/app.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
